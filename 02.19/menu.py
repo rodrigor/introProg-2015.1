@@ -1,3 +1,5 @@
+# Programa imprime um menu com o nome
+# "Menu" centralizado
 
 cabecalho = "Menu"
 
@@ -14,4 +16,3 @@ print(titulo)
 print("  [1] Cadastrar Aluno  ")
 print("  [2] Sair       ")
 print(linha)
-

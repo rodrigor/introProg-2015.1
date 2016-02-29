@@ -1,4 +1,4 @@
-
+# Exemplo do uso do IF, ELIF e ELSE
 print("**************************")
 print("   [1] Calc Media")
 print("   [2] Cad Aluno")
@@ -15,6 +15,12 @@ if opcao == "1":
     nota3 = float(input(">"))
     media = (nota1+nota2+nota3) / 3
     print(" A media do aluno e:",media)
+    if media >= 7:
+        print("APROVADO")
+    elif media >= 4:
+        print("PROVA FINAL")
+    else:
+        print("REPROVADO")
 elif opcao == "2":
     nome = input("digite seu nome:")
     matricula = input("matricula:")
