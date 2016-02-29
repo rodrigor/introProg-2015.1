@@ -1,0 +1,3 @@
+nome = "João"
+tamanho = len(nome)
+print(nome,"tem",tamanho,"letras")
