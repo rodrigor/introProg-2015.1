@@ -1,4 +1,4 @@
-notas = [10,8,5,4,2,10,9,8]
+notas = [10,8,5,4,2,10,9,8,8]
 
 soma = 0
 for nota in notas:
