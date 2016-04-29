@@ -31,3 +31,4 @@ while continua:
 
 arquivo = open("alunos.html","w")
 tabelaHtml(alunos,notas,arquivo)
+arquivo.close()
