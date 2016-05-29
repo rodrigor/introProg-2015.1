@@ -26,8 +26,9 @@ def pause():
     print()
     input("[Pressione qualquer tecla para continuar]")
 
-def ler_atividade():
-    codigo_atividade = ler_str("Código da atividade:",5,5)
-    tipo = ler_opcao("Tipo da atividade [pesquisa, extensão, ensino, admin]:",["pesquisa","ensino","extensão","admin"])
-    atividade = ler_str("Atividade:",5,200)
-    return [codigo_atividade,tipo,atividade]
+def ler_atividade(atividade = ["","",""]):
+    if atividade[0] == "":
+        atividade[0] = ler_str("Código da atividade\n>:",3,5)
+    atividade[1] = ler_opcao("Tipo da atividade [pesquisa, extensão, ensino, admin] (%s):\n>" % atividade[1],["pesquisa","ensino","extensão","admin",""])
+    atividade[2] = ler_str("Atividade (%s):\n>" % atividade[2],0,200)
+    return atividade

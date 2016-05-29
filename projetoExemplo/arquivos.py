@@ -33,6 +33,10 @@ def ler_codigos_atividades():
 def existe_codigo(codigo):
     return codigo in ler_codigos_atividades()
 
+def alterar_atividade(codigo,novaAtividade):
+    remover_atividade(codigo)
+    gravar_atividade(novaAtividade)
+
 def remover_atividade(codigo):
     atividades = ler_atividades()
     for i,atividade in enumerate(atividades):
