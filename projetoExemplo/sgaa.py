@@ -18,7 +18,10 @@ def cad_atividade():
     tela.cls()
     tela.print_titulo("Cadastro de atividades")
     atividade = ent.ler_atividade()
-    ativ.gravar_atividade(atividade)
+    if ativ.existe_codigo(atividade[0]):
+        print("[ERRO] Já existe uma atividade com o código '%s'" % atividade[0])
+    else:
+        ativ.gravar_atividade(atividade)
     ent.pause()
 
 def listar_atividades():
