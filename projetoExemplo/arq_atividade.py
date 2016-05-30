@@ -1,3 +1,5 @@
+import os
+
 arquivo_atividade = "atividades.txt"
 
 def gravar_atividade(atividade):
@@ -13,6 +15,9 @@ def atualizar_atividades(atividades):
 
 def ler_atividades():
     atividades = []
+    if not os.path.exists(arquivo_atividade):
+        return atividades
+    
     arq = open(arquivo_atividade,"r")
     linhas = arq.read().splitlines()
     for linha in linhas:

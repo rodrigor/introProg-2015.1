@@ -4,12 +4,12 @@
  Professor: Rodrigo Rebouças de Almeida
 
  Usa os módulos:
-    arquivos: que gerencia a leitura e escrita em arquivos
+    arq_atividade: que gerencia a leitura e escrita das atividades nos arquivos
     telas: que gerencia a exibição de elementos da tela: menus, títulos, etc.
     entrada: que contém funções para tratar a entrada de dados do usuário
 '''
 
-import arquivos as arq
+import arq_atividade as ativ
 import telas as tela
 import entrada as ent
 
@@ -18,25 +18,25 @@ def cad_atividade():
     tela.cls()
     tela.print_titulo("Cadastro de atividades")
     atividade = ent.ler_atividade()
-    arq.gravar_atividade(atividade)
+    ativ.gravar_atividade(atividade)
     ent.pause()
 
 def listar_atividades():
-    atividades = arq.ler_atividades()
+    atividades = ativ.ler_atividades()
     tela.listar_atividades(atividades)
     ent.pause()
 
 def remover_atividade():
     tela.print_titulo("Remover atividade")
     codigo = ent.ler_str("Digite o código da atividade:")
-    if not arq.existe_codigo(codigo):
+    if not ativ.existe_codigo(codigo):
         print("Não existe atividade com o código %s" % codigo)
     else:
-        atividade = arq.ler_atividade(codigo)
+        atividade = ativ.ler_atividade(codigo)
         tela.exibir_atividade(atividade)
-        opcao = ent.ler_opcao("Tem certeza que quer remover esta atividade? [s/n]",["s","n"])
+        opcao = ent.ler_opcao("Tem certeza que quer remover esta atividade?",["Sim","Não"],["s","n"])
         if opcao == "s":
-            if(arq.remover_atividade(codigo)):
+            if(ativ.remover_atividade(codigo)):
                 print("Atividade removida com sucesso!")
             else:
                 print("ERRO Interno: A atividade não foi removida!")
@@ -45,13 +45,13 @@ def remover_atividade():
 def alterar_atividade():
     tela.print_titulo("Alterar atividade")
     codigo = ent.ler_str("Código da atividade:")
-    if not arq.existe_codigo(codigo):
+    if not ativ.existe_codigo(codigo):
         print("ERRO: Não existe atividade com o código '%s'" % codigo)
     else:
-        atividade = arq.ler_atividade(codigo)
+        atividade = ativ.ler_atividade(codigo)
         tela.exibir_atividade(atividade)
         novaAtividade = ent.ler_atividade(atividade)
-        arq.alterar_atividade(codigo,novaAtividade)
+        ativ.alterar_atividade(codigo,novaAtividade)
         print("Atividade alterada com sucesso!")
     ent.pause()
 
